@@ -1,0 +1,11 @@
+(define (make-rat n d)
+  (let ((g (gcd n d)))
+    (if (> (* n d) 0)
+      (cons (abs (/ n g)) (abs (/ d g)))
+      (cons (if (> n 0) (/ (- n) g) (/ n g)) (abs (/ d g))))))
+
+(define (print x)
+  (newline)
+  (display (car x))
+  (display "/")
+  (display (cdr x)))
